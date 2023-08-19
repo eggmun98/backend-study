@@ -25,8 +25,17 @@ console.log(
 rl.on("line", (input) => {
   switch (input) {
     case "a":
+    // 만약 input이 "a"라면:
+    // case "a":와 일치하기 때문에 그 아래에 있는 코드 블록이 실행됩니다.
+    // 이어서 case "c":가 나오지만, 이미 일치하는 레이블을 찾았기 때문에 'fall-through'가 발생하고 그 아래의 코드 블록도 실행됩니다.
+    // aAPI(); 함수가 호출되며, 이어서 break;문이 실행되어 switch 문을 종료합니다.
+    case "c":
       aAPI();
       break;
+    // 만약 input이 "c"라면:
+    // case "a":는 일치하지 않으므로 넘어갑니다.
+    // case "c":와 일치하기 때문에 그 아래에 있는 코드 블록이 실행됩니다.
+    // aAPI(); 함수가 호출되며, 이어서 break;문이 실행되어 switch 문을 종료합니다.
     case "b":
       bAPI();
       break;
